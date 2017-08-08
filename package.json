@@ -1,0 +1,22 @@
+{
+	"id": "openthesaurus",
+	"name": "Open Thesaurus Synonyms",
+	"description": "Provides german synonyms provided by openthesaurus.de by (ctrl + right-clicking a word)",
+	"help": "",
+	"version": "1.0.0",
+	"enabled": true,
+	"releaseDate": "",
+	"main": "thesaurus.js",
+	"author": "ckosmowski",
+	"url": "",
+	"updates": "",
+	"dependencies": {
+		"wm": "3.0.2"
+	},
+	"strings": {
+		
+	},
+	"options": {		
+		
+	}
+}
