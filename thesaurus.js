@@ -20,10 +20,14 @@ module.exports = function(api, pluginInfo) {
 					return;
 				}
 				url = 'https://www.openthesaurus.de/synonyme/'+word+'?format=application/json';		
-				callApi(url, function(data){
-
+				callApi(url, function(data){					
 					data.synsets.forEach(function(synset){
-						synset.terms.forEach(function(term){
+						var terms = synset.terms.filter(function(t,index, self){							
+							return t.term != word && // do not display the word itsself
+									!t.term.endsWith("...") && //do not display prefix suggestions
+									self.indexOf(t) == index; //dedupe the list				
+						});
+						terms.forEach(function(term){							
 							newContextMenu.append(new m.gui.MenuItem({
 								label: term.term,
 								click: function() {
