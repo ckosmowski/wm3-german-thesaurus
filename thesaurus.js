@@ -16,6 +16,7 @@ module.exports = function(api, pluginInfo) {
 				});	
 				var word = getWordFromEditor();		
 				if (!word || word.match(/^\s+$/)){
+					newContextMenu.popup(e.x, e.y);
 					return;
 				}
 				url = 'https://www.openthesaurus.de/synonyme/'+word+'?format=application/json';		
